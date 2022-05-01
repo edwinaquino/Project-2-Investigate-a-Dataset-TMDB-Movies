@@ -5,3 +5,6 @@ The purpose of this project is to conduct data analysis on a dataset of more tha
 
 ## Demo
 [View Live Demo](https://edwinaquino.github.io/Project-2-Investigate-a-Dataset-TMDB-Movies/investigate-tmdb-movies.html)
+
+## Screen Shot
+![Project-2-Investigate-a-Dataset-TMDB-Movies](https://user-images.githubusercontent.com/30946443/166129706-ce334853-bcc3-4777-8c35-76ed13200ed8.jpg)
