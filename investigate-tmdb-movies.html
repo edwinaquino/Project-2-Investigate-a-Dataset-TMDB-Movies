@@ -16529,7 +16529,7 @@ Adapted from GitHub theme
                                 <li>Genre</li>
                                 <li>Production Company</li>
                             </ol>
-                            <p>&lt;/ol&gt;</p>
+
 
                     </div>
                 </div>
@@ -16540,7 +16540,7 @@ Adapted from GitHub theme
                     <div class="inner_cell">
                         <div class="input_area">
                             <div class=" highlight hl-ipython3">
-                                <pre><span></span><span class="c1"># We are using this cell to set up import statements for all of the packages that we </span>
+                                <pre><span class="c1"># We are using this cell to set up import statements for all of the packages that we </span>
 <span class="c1">#   plan to use for this notebook</span>
 
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -16584,7 +16584,7 @@ Adapted from GitHub theme
                     <div class="inner_cell">
                         <div class="input_area">
                             <div class=" highlight hl-ipython3">
-                                <pre><span></span><span class="c1">#loading the csv file and storing it in the variable &quot;movies_df&quot;</span>
+                                <pre><span class="c1">#loading the csv file and storing it in the variable &quot;movies_df&quot;</span>
 <span class="n">movies_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;tmdb-movies.csv&#39;</span><span class="p">)</span>
 
 <span class="c1">#printing first two rows with defined columns of tmdb-movies database</span>
@@ -16715,7 +16715,7 @@ Adapted from GitHub theme
                     <div class="inner_cell">
                         <div class="input_area">
                             <div class=" highlight hl-ipython3">
-                                <pre><span></span><span class="c1"># Show information about the movies dataset</span>
+                                <pre><span class="c1"># Show information about the movies dataset</span>
 <span class="n">movies_df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 </pre>
                             </div>
@@ -16734,7 +16734,7 @@ Adapted from GitHub theme
 
 
                             <div class="output_subarea output_stream output_stdout output_text">
-                                <pre>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+                                <pre class="pandas.core.frame.DataFrame">
 RangeIndex: 10866 entries, 0 to 10865
 Data columns (total 21 columns):
 id                      10866 non-null int64
@@ -16774,7 +16774,7 @@ memory usage: 1.7+ MB
                     <div class="inner_cell">
                         <div class="input_area">
                             <div class=" highlight hl-ipython3">
-                                <pre><span></span><span class="c1"># this returns a tuple of the dimensions of the dataframe</span>
+                                <pre><span class="c1"># this returns a tuple of the dimensions of the dataframe</span>
 <span class="n">movies_df</span><span class="o">.</span><span class="n">shape</span>
 </pre>
                             </div>
@@ -16810,7 +16810,7 @@ memory usage: 1.7+ MB
                     <div class="inner_cell">
                         <div class="input_area">
                             <div class=" highlight hl-ipython3">
-                                <pre><span></span><span class="c1"># this returns the number of unique values in each column</span>
+                                <pre><span class="c1"># this returns the number of unique values in each column</span>
 <span class="n">movies_df</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span>
 </pre>
                             </div>
@@ -16867,7 +16867,7 @@ dtype: int64</pre>
                     <div class="inner_cell">
                         <div class="input_area">
                             <div class=" highlight hl-ipython3">
-                                <pre><span></span><span class="c1"># this returns useful descriptive statistics for each column of data</span>
+                                <pre><span class="c1"># this returns useful descriptive statistics for each column of data</span>
 <span class="n">movies_df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
 </pre>
                             </div>
@@ -17039,7 +17039,7 @@ dtype: int64</pre>
                     <div class="inner_cell">
                         <div class="input_area">
                             <div class=" highlight hl-ipython3">
-                                <pre><span></span><span class="c1"># MOVED THESE DOWN</span>
+                                <pre><span class="c1"># MOVED THESE DOWN</span>
 <span class="c1"># check for duplicates in the data</span>
 <span class="c1">#sum(movies_df.duplicated())</span>
 </pre>
@@ -17056,7 +17056,7 @@ dtype: int64</pre>
                     <div class="inner_cell">
                         <div class="input_area">
                             <div class=" highlight hl-ipython3">
-                                <pre><span></span><span class="c1"># This function will be use throughout this notebook, therefore, we are declaring it in this section</span>
+                                <pre><span class="c1"># This function will be use throughout this notebook, therefore, we are declaring it in this section</span>
 <span class="c1">#The purpose of this function is to count the values in categories where elements are separated by the pipe character (|)</span>
 <span class="k">def</span> <span class="nf">CountColumnsWithPipe</span><span class="p">(</span><span class="n">column</span><span class="p">):</span>
     <span class="c1"># Separate elements by pipe</span>
@@ -17124,7 +17124,7 @@ dtype: int64</pre>
                     <div class="inner_cell">
                         <div class="input_area">
                             <div class=" highlight hl-ipython3">
-                                <pre><span></span><span class="c1"># declare a new array of columns for removal</span>
+                                <pre><span class="c1"># declare a new array of columns for removal</span>
 <span class="n">rm_cols</span><span class="o">=</span><span class="p">[</span> <span class="s1">&#39;imdb_id&#39;</span><span class="p">,</span> <span class="s1">&#39;homepage&#39;</span><span class="p">,</span> <span class="s1">&#39;tagline&#39;</span><span class="p">,</span> <span class="s1">&#39;keywords&#39;</span><span class="p">,</span> <span class="s1">&#39;overview&#39;</span><span class="p">,</span> <span class="s1">&#39;release_date&#39;</span><span class="p">,</span> <span class="s1">&#39;budget_adj&#39;</span><span class="p">,</span> <span class="s1">&#39;revenue_adj&#39;</span><span class="p">]</span>
 
 <span class="c1">#Removing the unwanted columns in the rm_cols array</span>
@@ -17243,7 +17243,7 @@ dtype: int64</pre>
                     <div class="inner_cell">
                         <div class="input_area">
                             <div class=" highlight hl-ipython3">
-                                <pre><span></span><span class="c1"># check for duplicates in the data</span>
+                                <pre><span class="c1"># check for duplicates in the data</span>
 <span class="nb">sum</span><span class="p">(</span><span class="n">movies_df</span><span class="o">.</span><span class="n">duplicated</span><span class="p">())</span>
 </pre>
                             </div>
@@ -17279,7 +17279,7 @@ dtype: int64</pre>
                     <div class="inner_cell">
                         <div class="input_area">
                             <div class=" highlight hl-ipython3">
-                                <pre><span></span><span class="c1"># drop duplicates</span>
+                                <pre><span class="c1"># drop duplicates</span>
 <span class="n">movies_df</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="c1"># confirm correction by rechecking for duplicates in the data</span>
 <span class="nb">sum</span><span class="p">(</span><span class="n">movies_df</span><span class="o">.</span><span class="n">duplicated</span><span class="p">())</span>
@@ -17327,7 +17327,7 @@ dtype: int64</pre>
                     <div class="inner_cell">
                         <div class="input_area">
                             <div class=" highlight hl-ipython3">
-                                <pre><span></span><span class="c1"># use means to fill in missing values</span>
+                                <pre><span class="c1"># use means to fill in missing values</span>
 <span class="n">movies_df</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">movies_df</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 <span class="c1"># confirm your correction with info()</span>
@@ -17349,7 +17349,7 @@ dtype: int64</pre>
 
 
                             <div class="output_subarea output_stream output_stdout output_text">
-                                <pre>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+                                <pre class="pandas.core.frame.DataFrame">
 Int64Index: 10865 entries, 0 to 10865
 Data columns (total 13 columns):
 id                      10865 non-null int64
@@ -17392,7 +17392,7 @@ memory usage: 1.2+ MB
                     <div class="inner_cell">
                         <div class="input_area">
                             <div class=" highlight hl-ipython3">
-                                <pre><span></span><span class="c1"># Find records With zero value</span>
+                                <pre><span class="c1"># Find records With zero value</span>
 <span class="n">movies_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">movies_df</span><span class="p">[</span><span class="s1">&#39;runtime&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">idxmin</span><span class="p">()]</span>
 </pre>
                             </div>
@@ -17441,7 +17441,7 @@ Name: 92, dtype: object</pre>
                     <div class="inner_cell">
                         <div class="input_area">
                             <div class=" highlight hl-ipython3">
-                                <pre><span></span><span class="c1"># REMOVE THE ROWS WITH ZERO RUNTIME, HERE WE WILL DECLARE A NEW DF</span>
+                                <pre><span class="c1"># REMOVE THE ROWS WITH ZERO RUNTIME, HERE WE WILL DECLARE A NEW DF</span>
 <span class="n">movies_df</span> <span class="o">=</span> <span class="n">movies_df</span><span class="p">[</span><span class="n">movies_df</span><span class="p">[</span><span class="s1">&#39;runtime&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">]</span>
 <span class="c1"># Run idxmin() to confirm records have been dropped. </span>
 <span class="n">movies_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">movies_df</span><span class="p">[</span><span class="s1">&#39;runtime&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">idxmin</span><span class="p">()]</span>
@@ -17506,7 +17506,7 @@ Name: 4883, dtype: object</pre>
                     <div class="inner_cell">
                         <div class="input_area">
                             <div class=" highlight hl-ipython3">
-                                <pre><span></span><span class="c1"># Find out how many rows and columns our dataset contains.</span>
+                                <pre><span class="c1"># Find out how many rows and columns our dataset contains.</span>
 <span class="n">movies_df</span><span class="o">.</span><span class="n">shape</span>
 </pre>
                             </div>
@@ -17542,7 +17542,7 @@ Name: 4883, dtype: object</pre>
                     <div class="inner_cell">
                         <div class="input_area">
                             <div class=" highlight hl-ipython3">
-                                <pre><span></span><span class="c1"># create a temporary list for columns &#39;budget&#39;, &#39;revenue&#39;, &#39;runtime&#39;</span>
+                                <pre><span class="c1"># create a temporary list for columns &#39;budget&#39;, &#39;revenue&#39;, &#39;runtime&#39;</span>
 <span class="n">tmpList</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;budget&#39;</span><span class="p">,</span> <span class="s1">&#39;revenue&#39;</span><span class="p">,</span> <span class="s1">&#39;runtime&#39;</span><span class="p">]</span>
 
 <span class="c1">#Replace all the values with &#39;0&#39; to NAN</span>
@@ -17607,7 +17607,7 @@ Name: 4883, dtype: object</pre>
                     <div class="inner_cell">
                         <div class="input_area">
                             <div class=" highlight hl-ipython3">
-                                <pre><span></span><span class="c1"># Find the number of movies Tom Hanks was part of the cast</span>
+                                <pre><span class="c1"># Find the number of movies Tom Hanks was part of the cast</span>
 <span class="nb">len</span><span class="p">(</span><span class="n">movies_df</span><span class="p">[</span><span class="n">movies_df</span><span class="p">[</span><span class="s1">&#39;cast&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">&#39;Tom Hanks&#39;</span><span class="p">,</span> <span class="n">na</span><span class="o">=</span><span class="kc">False</span><span class="p">)])</span>
 </pre>
                             </div>
@@ -17656,7 +17656,7 @@ Name: 4883, dtype: object</pre>
                     <div class="inner_cell">
                         <div class="input_area">
                             <div class=" highlight hl-ipython3">
-                                <pre><span></span><span class="c1">#set a variable to return a value</span>
+                                <pre><span class="c1">#set a variable to return a value</span>
 <span class="n">cast_count</span> <span class="o">=</span> <span class="n">CountColumnsWithPipe</span><span class="p">(</span><span class="s1">&#39;cast&#39;</span><span class="p">)</span>
 
 <span class="c1">#printing top 5 values</span>
@@ -17726,7 +17726,7 @@ dtype: int64</pre>
                     <div class="inner_cell">
                         <div class="input_area">
                             <div class=" highlight hl-ipython3">
-                                <pre><span></span><span class="c1"># print the top 2 longest running shows from our dataset </span>
+                                <pre><span class="c1"># print the top 2 longest running shows from our dataset </span>
 <span class="n">movies_df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;runtime&#39;</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 </pre>
                             </div>
@@ -17829,7 +17829,7 @@ dtype: int64</pre>
                     <div class="inner_cell">
                         <div class="input_area">
                             <div class=" highlight hl-ipython3">
-                                <pre><span></span><span class="c1"># Show the shortest running shows</span>
+                                <pre><span class="c1"># Show the shortest running shows</span>
 <span class="n">movies_df</span><span class="p">[</span><span class="n">movies_df</span><span class="p">[</span><span class="s1">&#39;runtime&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;runtime&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 </pre>
                             </div>
@@ -17946,7 +17946,7 @@ dtype: int64</pre>
                     <div class="inner_cell">
                         <div class="input_area">
                             <div class=" highlight hl-ipython3">
-                                <pre><span></span><span class="c1"># here, we will be plotting a movies runtime histogram </span>
+                                <pre><span class="c1"># here, we will be plotting a movies runtime histogram </span>
 
 <span class="c1">#setting the graph size(width, height)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="n">dpi</span> <span class="o">=</span> <span class="mi">100</span><span class="p">)</span>
@@ -18020,7 +18020,7 @@ dtype: int64</pre>
                     <div class="inner_cell">
                         <div class="input_area">
                             <div class=" highlight hl-ipython3">
-                                <pre><span></span><span class="n">movies_df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;vote_count&#39;</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+                                <pre><span class="n">movies_df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;vote_count&#39;</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </pre>
                             </div>
 
@@ -18118,7 +18118,7 @@ dtype: int64</pre>
                     <div class="inner_cell">
                         <div class="input_area">
                             <div class=" highlight hl-ipython3">
-                                <pre><span></span><span class="n">movies_df</span><span class="p">[</span><span class="n">movies_df</span><span class="p">[</span><span class="s1">&#39;genres&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s2">&quot;Movie&quot;</span><span class="p">,</span> <span class="n">na</span><span class="o">=</span><span class="kc">False</span><span class="p">)]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;vote_average&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+                                <pre><span class="n">movies_df</span><span class="p">[</span><span class="n">movies_df</span><span class="p">[</span><span class="s1">&#39;genres&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s2">&quot;Movie&quot;</span><span class="p">,</span> <span class="n">na</span><span class="o">=</span><span class="kc">False</span><span class="p">)]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;vote_average&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 </pre>
                             </div>
 
@@ -18215,7 +18215,7 @@ dtype: int64</pre>
                     <div class="inner_cell">
                         <div class="input_area">
                             <div class=" highlight hl-ipython3">
-                                <pre><span></span><span class="c1"># variable to save the average budget</span>
+                                <pre><span class="c1"># variable to save the average budget</span>
 <span class="n">avg</span> <span class="o">=</span> <span class="n">movies_df</span><span class="p">[</span><span class="s1">&#39;budget&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The Average amount or funding needed to make a movie is $&#39;</span> <span class="o">+</span> <span class="nb">format</span><span class="p">(</span><span class="n">avg</span><span class="p">,</span> <span class="s1">&#39;,.0f&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;(US)&#39;</span><span class="p">)</span>
 </pre>
@@ -18263,7 +18263,7 @@ dtype: int64</pre>
                     <div class="inner_cell">
                         <div class="input_area">
                             <div class=" highlight hl-ipython3">
-                                <pre><span></span><span class="n">movies_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;release_year&#39;</span><span class="p">)[</span><span class="s1">&#39;budget&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;line&#39;</span><span class="p">,</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;g&#39;</span><span class="p">)</span>
+                                <pre><span class="n">movies_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;release_year&#39;</span><span class="p">)[</span><span class="s1">&#39;budget&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;line&#39;</span><span class="p">,</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;g&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Yearly Average Movie Badget&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">18</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">12</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Budgets  (Millions US Dollars)&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">12</span><span class="p">);</span>
@@ -18336,7 +18336,7 @@ dtype: int64</pre>
                     <div class="inner_cell">
                         <div class="input_area">
                             <div class=" highlight hl-ipython3">
-                                <pre><span></span><span class="c1"># create a new &#39;profit&#39; column</span>
+                                <pre><span class="c1"># create a new &#39;profit&#39; column</span>
 <span class="n">movies_df</span><span class="p">[</span><span class="s1">&#39;profit&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">movies_df</span><span class="p">[</span><span class="s1">&#39;revenue&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">movies_df</span><span class="p">[</span><span class="s1">&#39;budget&#39;</span><span class="p">]</span>
 <span class="c1">#create a new DataFrame to contain the movie title and profits amout</span>
 <span class="n">movies_df1</span> <span class="o">=</span> <span class="n">movies_df</span><span class="p">[[</span><span class="s1">&#39;original_title&#39;</span><span class="p">,</span><span class="s1">&#39;revenue&#39;</span><span class="p">,</span><span class="s1">&#39;budget&#39;</span><span class="p">,</span><span class="s1">&#39;profit&#39;</span><span class="p">]]</span>
@@ -18356,7 +18356,7 @@ dtype: int64</pre>
                     <div class="inner_cell">
                         <div class="input_area">
                             <div class=" highlight hl-ipython3">
-                                <pre><span></span><span class="c1"># Show the top 5 movies with higher profits</span>
+                                <pre><span class="c1"># Show the top 5 movies with higher profits</span>
 <span class="n">limit</span> <span class="o">=</span> <span class="mi">5</span>
 <span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
 <span class="n">counter</span> <span class="o">=</span> <span class="mi">1</span>
@@ -18405,7 +18405,7 @@ dtype: int64</pre>
                     <div class="inner_cell">
                         <div class="input_area">
                             <div class=" highlight hl-ipython3">
-                                <pre><span></span><span class="c1"># plot relationship between budget and revenue</span>
+                                <pre><span class="c1"># plot relationship between budget and revenue</span>
 <span class="n">movies_df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;budget&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;profit&#39;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;scatter&#39;</span><span class="p">);</span>
 </pre>
                             </div>
@@ -18464,7 +18464,7 @@ dtype: int64</pre>
                     <div class="inner_cell">
                         <div class="input_area">
                             <div class=" highlight hl-ipython3">
-                                <pre><span></span><span class="c1"># show the top 5 movies with the highest profits</span>
+                                <pre><span class="c1"># show the top 5 movies with the highest profits</span>
 <span class="n">movies_df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;profit&#39;</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 </pre>
                             </div>
@@ -18644,7 +18644,7 @@ dtype: int64</pre>
                     <div class="inner_cell">
                         <div class="input_area">
                             <div class=" highlight hl-ipython3">
-                                <pre><span></span><span class="c1"># Generate a pie graph with all the different genres</span>
+                                <pre><span class="c1"># Generate a pie graph with all the different genres</span>
 <span class="n">genres_count</span> <span class="o">=</span> <span class="n">CountColumnsWithPipe</span><span class="p">(</span><span class="s1">&#39;genres&#39;</span><span class="p">)</span>
 <span class="n">genres_count</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;pie&#39;</span><span class="p">,</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">));</span>
 </pre>
@@ -18710,61 +18710,48 @@ dtype: int64</pre>
                     </div>
                 </div>
             </div>
-            <div class="cell border-box-sizing code_cell rendered">
-                <div class="input">
-                    <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-                    <div class="inner_cell">
-                        <div class="input_area">
-                            <div class=" highlight hl-ipython3">
-                                <pre><span></span> 
-</pre>
-                            </div>
 
-                        </div>
-                    </div>
-                </div>
-
-            </div>
         </div>
     </div>
-<!-- Code injected by live-server -->
-<script type="text/javascript">
-	// <![CDATA[  <-- For SVG support
-	if ('WebSocket' in window) {
-		(function () {
-			function refreshCSS() {
-				var sheets = [].slice.call(document.getElementsByTagName("link"));
-				var head = document.getElementsByTagName("head")[0];
-				for (var i = 0; i < sheets.length; ++i) {
-					var elem = sheets[i];
-					var parent = elem.parentElement || head;
-					parent.removeChild(elem);
-					var rel = elem.rel;
-					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
-						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
-						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
-					}
-					parent.appendChild(elem);
-				}
-			}
-			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
-			var address = protocol + window.location.host + window.location.pathname + '/ws';
-			var socket = new WebSocket(address);
-			socket.onmessage = function (msg) {
-				if (msg.data == 'reload') window.location.reload();
-				else if (msg.data == 'refreshcss') refreshCSS();
-			};
-			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
-				console.log('Live reload enabled.');
-				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
-			}
-		})();
-	}
-	else {
-		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
-	}
+    <!-- Code injected by live-server -->
+    <script type="text/javascript">
+        // <![CDATA[  <-- For SVG support
+        if ('WebSocket' in window) {
+            (function () {
+                function refreshCSS() {
+                    var sheets = [].slice.call(document.getElementsByTagName("link"));
+                    var head = document.getElementsByTagName("head")[0];
+                    for (var i = 0; i < sheets.length; ++i) {
+                        var elem = sheets[i];
+                        var parent = elem.parentElement || head;
+                        parent.removeChild(elem);
+                        var rel = elem.rel;
+                        if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+                            var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+                            elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+                        }
+                        parent.appendChild(elem);
+                    }
+                }
+                var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+                var address = protocol + window.location.host + window.location.pathname + '/ws';
+                var socket = new WebSocket(address);
+                socket.onmessage = function (msg) {
+                    if (msg.data == 'reload') window.location.reload();
+                    else if (msg.data == 'refreshcss') refreshCSS();
+                };
+                if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+                    console.log('Live reload enabled.');
+                    sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+                }
+            })();
+        }
+        else {
+            console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+        }
 	// ]]>
-</script></body>
+    </script>
+</body>
 
 
 
